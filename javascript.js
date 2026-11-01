@@ -77,7 +77,8 @@ function setLang(l){lang=l;document.documentElement.lang=l;
   $("#en").textContent=W.groom.en+" & "+W.bride.en;
   $("#lu").textContent=(l=="km"?"":"Lunar date: ")+W.lunar;
   $("#vn").textContent=W.venue[l];$("#lang").innerHTML=l=="km"?"<b>ខ្មែរ</b> / EN":"ខ្មែរ / <b>EN</b>";
-  const galleryAll=$("#gallery-all");
+   $("#closing-names").textContent=W.groom[l]+" & "+W.bride[l];
+   const galleryAll=$("#gallery-all");
   if(galleryAll)galleryAll.textContent=(l=="km"?"មើលរូបភាពទាំងអស់":"View all photos")+` (${W.gal?.length||0})`;
   if(personalizedGuestName)$("#guest-greeting").textContent=l=="km"?`សូមគោរពអញ្ជើញ ${personalizedGuestName}`:`You are warmly invited, ${personalizedGuestName}`;}
 setLang("km");
@@ -285,7 +286,10 @@ Object.assign(T.en,{gn:W.groom.en,bn:W.bride.en,gk:W.groom.en,bk:W.bride.en,ge:W
 /* ---- Texts ---- */
 Object.assign(T.km,{qh:"ចំណងដៃ",qs:"វត្តមានរបស់ប្រិយមិត្តជាកិត្តិយសដ៏ធំបំផុតសម្រាប់យើងខ្ញុំ។ ប្រសិនបើមានបំណងផ្តល់ចំណងដៃ សូមស្កេន QR ខាងក្រោម។",qsave:"រក្សាទុករូប QR",
  lh:"ទីតាំងកម្មវិធី",lv:W.venue.km,lb:"ទីតាំង",gh:"រូបភាពអនុស្សាវរីយ៍",mapLink:"ចុចមើលទីតាំងក្នុង Google Maps",
+ closingTitle:"សូមអរគុណ",
+ closingMessage:"សូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅចំពោះការចូលរួម និងពាក្យជូនពរដ៏មានន័យរបស់លោកអ្នក។ វត្តមានរបស់លោកអ្នក គឺជាកិត្តិយស និងជាសេចក្តីរីករាយដ៏ធំធេងសម្រាប់គ្រួសារយើងខ្ញុំ។",
  contactIntro:"សូមទាក់ទងមកយើងខ្ញុំ ឬចែករំលែកលិខិតអញ្ជើញជាមួយក្រុមគ្រួសារ និងមិត្តភក្តិ។",
+ publicInvitationLabel:"ចុច link ខាងក្រោម ដើម្បីមើលលិខិតអញ្ជើញ",
  contactUs:"ទាក់ទងតាម",shareLabel:"ចែករំលែក",invitationLink:"ចម្លងតំណលិខិតអញ្ជើញ",
  rsvpTitle:"សូមបញ្ជាក់ការអញ្ជើញ",rsvpIntro:"សូមបញ្ជាក់ការចូលរួមរបស់អ្នក។",rsvpFor:"លិខិតអញ្ជើញសម្រាប់",
  rsvpAttendLabel:"តើលោកអ្នកអាចចូលរួមបានទេ?",rsvpYes:"ចូលរួម",rsvpNo:"មិនអាចចូលរួម",
@@ -293,7 +297,10 @@ Object.assign(T.km,{qh:"ចំណងដៃ",qs:"វត្តមានរបស�
  rsvpSubmit:"បញ្ជូនចម្លើយ"});
 Object.assign(T.en,{qh:"Wedding Gift",qs:"Your presence is our greatest gift. Should you wish to give, you may scan a code below.",qsave:"Save QR",
  lh:"Location",lv:W.venue.en,lb:"Location",gh:"Our Moments",mapLink:"Open location in Google Maps",
+ closingTitle:"Thank You",
+ closingMessage:"With heartfelt gratitude, thank you for joining us and for your kind wishes. Your presence is an honor and a joy to our families.",
  contactIntro:"Contact us or share this invitation with your family and friends.",
+ publicInvitationLabel:"Open the invitation using this link",
  contactUs:"Contact via",shareLabel:"Share",invitationLink:"Copy invitation link",
  rsvpTitle:"Please RSVP",rsvpIntro:"Please let us know if you can join us.",rsvpFor:"Invitation for",
  rsvpAttendLabel:"Will you attend?",rsvpYes:"Yes, I will attend",rsvpNo:"Sorry, I cannot attend",
@@ -319,18 +326,23 @@ W.gal=[
 (function(){
  const phone="016636211";
  const facebookUrl="https://www.facebook.com/share/1FpQwy7K8o/?mibextid=wwXIfr";
+ const publicInvitationUrl=new URL("https://website-wedding-liart.vercel.app/");
  $("#contact-phone").href=`tel:${phone}`;
  $("#contact-phone").textContent=phone;
+ $("#public-invitation-link").href=publicInvitationUrl.href;
  $("#telegram-link").href="https://t.me/+85516636211";
  $("#messenger-link").href=facebookUrl;
  $("#facebook-link").href=facebookUrl;
  $("#copy-invitation").addEventListener("click",async()=>{
   const status=$("#contact-status");
+  const shareUrl=new URL(publicInvitationUrl);
+  const guestCode=new URLSearchParams(window.location.search).get("guest");
+  if(guestCode)shareUrl.searchParams.set("guest",guestCode);
   try{
-   await navigator.clipboard.writeText(window.location.href);
+   await navigator.clipboard.writeText(shareUrl.href);
    status.textContent=lang==="km"?"បានចម្លងតំណលិខិតអញ្ជើញហើយ":"Invitation link copied.";
   }catch(error){
-   const copied=window.prompt(lang==="km"?"សូមចម្លងតំណលិខិតអញ្ជើញ":"Copy the invitation link",window.location.href);
+   const copied=window.prompt(lang==="km"?"សូមចម្លងតំណលិខិតអញ្ជើញ":"Copy the invitation link",shareUrl.href);
    status.textContent=copied===null?(lang==="km"?"មិនបានចម្លងតំណទេ":"Link was not copied."):(lang==="km"?"សូមចែករំលែកតំណនេះ":"Share this link");
   }
  });
