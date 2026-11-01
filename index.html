@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>សិរីសួស្តីអាពាហ៍ពិពាហ៍ · Wedding Invitation</title>
+<title>ចំណងដៃ</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Moul&family=Moulpali&family=Kantumruy+Pro:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -23,8 +23,11 @@
 
 <header id="bar">
   <div class="lgs" data-logo></div>
-  <div><button id="rp">↻</button><button id="lang">EN</button><button id="mu" aria-label="Music"><svg width="16" height="12" viewBox="0 0 16 12" fill="#e6cb80"><rect x="1" y="3" width="2" height="9"/><rect x="7" y="0" width="2" height="12"/><rect x="13" y="5" width="2" height="7"/></svg></button></div>
+  <div><button id="rp">↻</button><button id="lang">EN</button><button id="mu" aria-label="Open music player" aria-expanded="false" aria-controls="music-panel"><svg width="16" height="12" viewBox="0 0 16 12" fill="#e6cb80"><rect x="1" y="3" width="2" height="9"/><rect x="7" y="0" width="2" height="12"/><rect x="13" y="5" width="2" height="7"/></svg></button></div>
 </header>
+<div id="music-panel" class="music-panel" hidden>
+  <iframe id="music-frame" title="Wedding music on YouTube" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 <main id="env">
   <div>
@@ -68,6 +71,7 @@
     <div class="lgb" data-logo></div>
     <div class="en a" id="en"></div>
     <p class="inv a" data-i="inv"></p>
+    <p class="guest-greeting a" id="guest-greeting" hidden></p>
     <div class="dt a">
       <div><b class="foil" id="d0"></b><small data-i="d0"></small></div>
       <div><b class="foil" id="d1"></b><small data-i="d1"></small></div>
@@ -83,7 +87,6 @@
   <div class="af"><svg class="aro" viewBox="0 0 100 140" preserveAspectRatio="none"><path d="M1 139V50C1 22 22 1 50 1C78 1 99 22 99 50V139Z" fill="none" stroke="#c9a24a" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>
     <div class="ar"><img alt="" src="assets/couple1.png"></div></div>
   <div class="pn">
-    <div class="par"><div class="l"><span class="a1" data-i="g1"></span><span class="a2" data-i="g2"></span></div><div class="r"><span class="a1" data-i="b1"></span><span class="a2" data-i="b2"></span></div></div>
     <h3 class="ih foil" data-i="ih"></h3>
     <p class="ip" data-i="ip"></p>
     <div class="nr"><div class="nm"><small data-i="gl"></small><b class="foil" data-i="gn"></b></div>
@@ -92,7 +95,19 @@
     <div class="dv"></div>
     <p class="idt" data-i="idt"></p>
   </div>
+  
 </div></section>
+<section id="welcome" class="tex">
+  <div class="welcome-card">
+    <h3 class="welcome-heading foil" data-i="ih"></h3>
+    <svg class="welcome-ornament" viewBox="0 0 320 72" aria-hidden="true">
+      <path d="M8 36C48 36 70 58 112 48C132 43 143 37 151 36M312 36C272 36 250 58 208 48C188 43 177 37 169 36"/>
+      <path d="M160 4C151 16 151 24 160 31C169 24 169 16 160 4ZM160 68C151 56 151 48 160 41C169 48 169 56 160 68ZM137 36C148 27 154 27 160 36C154 45 148 45 137 36ZM183 36C172 27 166 27 160 36C166 45 172 45 183 36Z"/>
+      <circle cx="160" cy="36" r="5"/>
+    </svg>
+    <p class="welcome-copy" data-i="ip"></p>
+  </div>
+</section>
 <section id="cp" class="tex">
   <h3 class="ch foil" data-i="ch"></h3>
   <svg class="dvd" viewBox="0 0 320 24"><defs><linearGradient id="dl" gradientUnits="userSpaceOnUse" x1="0" x2="320" y1="0" y2="0"><stop offset="0" stop-color="#c9a24a" stop-opacity="0"/><stop offset=".5" stop-color="#f0d98f"/><stop offset="1" stop-color="#c9a24a" stop-opacity="0"/></linearGradient></defs>
@@ -101,8 +116,8 @@
     <g class="dm"><path d="M160 4L166 12L160 20L154 12Z" fill="url(#gf)"/></g></svg>
   <div class="cg">
     <div class="ph2"><div class="pf"><svg id="sc" viewBox="0 0 100 111"><path fill="none" stroke="url(#gf)" stroke-width=".8"/></svg><div class="im"><img src="assets/couple.jpg" alt=""></div></div></div>
-    <div class="gm"><div class="lb" data-i="gl2"></div><div class="nmk foil" data-i="gk"></div><span class="nme" data-i="ge"></span><p class="pp"><span data-i="gp1"></span><br><span data-i="gp2"></span></p></div>
-    <div class="br"><div class="lb" data-i="bl2"></div><div class="nmk foil" data-i="bk"></div><span class="nme" data-i="be"></span><p class="pp"><span data-i="bp1"></span><br><span data-i="bp2"></span></p></div>
+    <div class="gm"><div class="lb" data-i="gl2"></div><div class="nmk foil" data-i="gk"></div><span class="nme" data-i="ge"></span></div>
+    <div class="br"><div class="lb" data-i="bl2"></div><div class="nmk foil" data-i="bk"></div><span class="nme" data-i="be"></span></div>
   </div>
 </section>
 <section id="cd" class="tex">
@@ -115,13 +130,127 @@
     <div class="u"><b class="foil" data-u>០០</b><small data-i="u3"></small></div>
   </div>
 </section>
-<section id="pg" class="tex"><div class="pg"><h3 class="pgt" data-i="pgh"></h3><div class="tl"><div class="bs"></div><div class="tf"></div></div></div></section>
+<section id="pg" class="tex"><div class="pg">
+  <p class="pg-kicker">PROGRAMME</p>
+  <h3 class="pgt" data-i="pgh"></h3>
+  <svg class="pg-ornament" viewBox="0 0 320 72" aria-hidden="true">
+    <path d="M8 36C48 36 70 58 112 48C132 43 143 37 151 36M312 36C272 36 250 58 208 48C188 43 177 37 169 36" />
+    <path d="M160 4C151 16 151 24 160 31C169 24 169 16 160 4ZM160 68C151 56 151 48 160 41C169 48 169 56 160 68ZM137 36C148 27 154 27 160 36C154 45 148 45 137 36ZM183 36C172 27 166 27 160 36C166 45 172 45 183 36Z" />
+    <circle cx="160" cy="36" r="5" />
+  </svg>
+  <div class="tl"><div class="bs"></div><div class="tf"></div></div>
+</div></section>
 <section id="mm"><div class="mpin" id="mpin"><i class="sun" id="sun"></i>
   <div class="mtrack" id="mtrack"><div class="mi">
     <div class="mk foil" data-i="mmk"></div><p class="m1" data-i="mm1"></p><h3 class="mh" data-i="mmh"></h3>
     <div class="ms"><span data-i="mms"></span><i></i></div><button class="pk" id="pk3">Preview with my 10 photos</button>
   </div></div></div></section>
+  <!-- In index.html: paste these 3 sections AFTER </section> of #pg and BEFORE <section id="mm"> -->
+
+<section id="qr" class="tex">
+  <h3 class="ch foil" data-i="qh"></h3>
+  <p class="qs" data-i="qs"></p>
+  <div class="qg" id="qg"></div>
+</section>
+
+<section id="loc" class="tex">
+  <h3 class="ch foil" data-i="lh"></h3>
+  <p class="qs" data-i="lv"></p>
+  <div class="lph" id="lph"></div>
+  <div class="lmap"><iframe id="lm" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+  <a class="map-link" id="map-link" target="_blank" rel="noopener noreferrer" data-i="mapLink"></a>
+</section>
+
+<section id="gal" class="tex">
+  <h3 class="gallery-heading" data-i="gh"></h3>
+  <svg class="gallery-ornament" viewBox="0 0 360 92" aria-hidden="true">
+    <path d="M10 60C31 60 39 36 57 29C74 22 88 31 92 43C98 59 81 65 74 55C70 49 75 43 81 45M350 60C329 60 321 36 303 29C286 22 272 31 268 43C262 59 279 65 286 55C290 49 285 43 279 45"/>
+    <path d="M10 60C42 58 53 73 83 72C112 71 126 57 148 57C161 57 169 62 180 65C191 62 199 57 212 57C234 57 248 71 277 72C307 73 318 58 350 60"/>
+    <path d="M180 10C170 24 171 34 180 42C189 34 190 24 180 10ZM180 82C170 68 171 58 180 50C189 58 190 68 180 82ZM151 46C163 35 173 36 180 46C173 56 163 57 151 46ZM209 46C197 35 187 36 180 46C187 56 197 57 209 46Z"/>
+    <path d="M112 55C128 46 139 45 151 48M248 55C232 46 221 45 209 48M180 42V50"/>
+    <circle cx="180" cy="46" r="3.5"/>
+  </svg>
+  <div class="gv"><div class="gt" id="gt"></div></div>
+  <div class="gallery-end">
+    <svg class="gallery-butterfly" viewBox="0 0 40 36" aria-hidden="true"><path d="M19 17C13 4 2 4 3 12C3 18 11 20 19 18M21 17C27 4 38 4 37 12C37 18 29 20 21 18M19 19C12 18 8 25 12 29C16 32 19 25 19 19M21 19C28 18 32 25 28 29C24 32 21 25 21 19M20 15V27" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <button class="gallery-all" id="gallery-all" type="button"></button>
+    <svg class="gallery-butterfly" viewBox="0 0 40 36" aria-hidden="true"><path d="M19 17C13 4 2 4 3 12C3 18 11 20 19 18M21 17C27 4 38 4 37 12C37 18 29 20 21 18M19 19C12 18 8 25 12 29C16 32 19 25 19 19M21 19C28 18 32 25 28 29C24 32 21 25 21 19M20 15V27" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<section id="contact" class="tex">
+  <div class="contact-inner">
+    <h2 class="contact-number foil"><a id="contact-phone" href="tel:016636211">016636211</a></h2>
+    <p class="contact-copy" data-i="contactIntro"></p>
+    <div class="rsvp-card" id="rsvp-card" hidden>
+      <h3 class="rsvp-heading foil" data-i="rsvpTitle"></h3>
+      <p class="rsvp-intro" data-i="rsvpIntro"></p>
+      <p class="rsvp-guest" id="rsvp-guest" hidden><span data-i="rsvpFor"></span> <b id="rsvp-guest-name"></b></p>
+      <form class="rsvp-form" id="rsvp-form" hidden>
+        <label class="rsvp-field" for="rsvp-attending">
+          <span data-i="rsvpAttendLabel"></span>
+          <select id="rsvp-attending" name="attending" required>
+            <option value="yes" data-i="rsvpYes"></option>
+            <option value="no" data-i="rsvpNo"></option>
+          </select>
+        </label>
+        <label class="rsvp-field" id="rsvp-party-field" for="rsvp-party-size">
+          <span data-i="rsvpCountLabel"></span>
+          <input id="rsvp-party-size" name="partySize" type="number" min="1" max="20" value="1" required>
+        </label>
+        <label class="rsvp-field" for="rsvp-phone">
+          <span data-i="rsvpPhoneLabel"></span>
+          <input id="rsvp-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+        </label>
+        <label class="rsvp-field" for="rsvp-message">
+          <span data-i="rsvpMessageLabel"></span>
+          <textarea id="rsvp-message" name="message" rows="3" maxlength="500"></textarea>
+        </label>
+        <button class="rsvp-submit" type="submit" data-i="rsvpSubmit"></button>
+      </form>
+      <p class="rsvp-status" id="rsvp-status" role="status" aria-live="polite"></p>
+    </div>
+    <nav class="contact-links" aria-label="Contact and invitation links">
+      <a class="contact-link telegram" id="telegram-link" target="_blank" rel="noopener noreferrer">
+        <span class="contact-icon" aria-hidden="true">➤</span><span><small data-i="contactUs"></small><b>Telegram</b></span>
+      </a>
+      <a class="contact-link messenger" id="messenger-link" target="_blank" rel="noopener noreferrer">
+        <span class="contact-icon" aria-hidden="true">●</span><span><small data-i="contactUs"></small><b>Messenger</b></span>
+      </a>
+      <a class="contact-link facebook" id="facebook-link" target="_blank" rel="noopener noreferrer">
+        <span class="contact-icon" aria-hidden="true">f</span><span><small data-i="contactUs"></small><b>Facebook</b></span>
+      </a>
+      <button class="contact-link copy-link" id="copy-invitation">
+        <span class="contact-icon" aria-hidden="true">↗</span><span><small data-i="shareLabel"></small><b data-i="invitationLink"></b></span>
+      </button>
+    </nav>
+    <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- Also paste this next to <div id="dark"></div> (outside #scroll) -->
+<button class="pk" id="lbtn" data-i="lb"></button>
 </div>
+<nav class="bottom-nav" id="bottom-nav" aria-label="រុករកលិខិតអញ្ជើញ">
+  <a href="#pg" data-target="#pg" aria-label="កម្មវិធី" title="កម្មវិធី">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 10h16m-11 4h2m3 0h2m-7 3h2"/></svg>
+  </a>
+  <a href="#loc" data-target="#loc" aria-label="ទីតាំង" title="ទីតាំង">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+  </a>
+  <a href="#contact" data-target="#contact" aria-label="ទំនាក់ទំនង" title="ទំនាក់ទំនង">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+  </a>
+  <a href="#gal" data-target="#gal" aria-label="រូបភាព" title="រូបភាព">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m21 15-5-5L5 20"/></svg>
+  </a>
+  <a href="https://www.facebook.com/share/1FpQwy7K8o/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Messenger" title="Messenger">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.8-5.1A8.5 8.5 0 1 1 21 11.5Z"/><path d="m7.5 14 3.2-3.4 2.4 1.8 3.4-1.8-3.2 3.4-2.4-1.8Z"/></svg>
+  </a>
+  <a href="#qr" data-target="#qr" aria-label="QR ចំណងដៃ" title="QR ចំណងដៃ">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zm5 0h2m-7 5h3m2-2v4m2-3h1"/></svg>
+  </a>
+</nav>
 <div id="dark"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

@@ -6,50 +6,46 @@ const W={
   date:["អាទិត្យ","22","វិច្ឆិកា","២០២៦"],
   lunar:"ថ្ងៃអាទិត្យ ៦កើត ខែកត្តិក ឆ្នាំមមី អដ្ឋស័ក ព.ស. ២៥៧០",
   venue:{km:"គេហដ្ឋានខាងស្រី ភូមិគាងថាវង្សក្រោម ឃំុត្រពាំងសាលាខាងលិច ខេត្តកំពត",en:"[Venue in English]"},
-  parents:["លោក ផៃ សុខន","អ្នកស្រី យ៉ាន់ ចាន់ណារ៉ា","លោក ហែម សាឡឿន","អ្នកស្រី សៅ ឆលឿន"], /* read from screenshot: VERIFY */
   time:{km:"៤:០០ ល្ងាច",en:"4:00 pm"},
-  music:"" /* e.g. "music.mp3" */
 };
 const T={
  km:{et:"សិរីសួស្តីអាពាហ៍ពិពាហ៍",tap:"ចុចលើត្រា ដើម្បីបើកធៀប",inv:"សូមគោរពអញ្ជើញ",d0:"ថ្ងៃ",d1:"ទី",d2:"ខែ",d3:"ឆ្នាំ",sc:"ទាញចុះ"},
  en:{et:"សិរីសួស្តីអាពាហ៍ពិពាហ៍",tap:"Tap the seal to open",inv:"Request the pleasure of your company",d0:"Day",d1:"Date",d2:"Month",d3:"Year",sc:"Scroll"}
 };
-Object.assign(T.km,{g1:W.parents[0],g2:W.parents[1],b1:W.parents[2],b2:W.parents[3],ih:"មានកិត្តិយសសូមគោរពអញ្ជើញ",
+Object.assign(T.km,{ih:"មានកិត្តិយសសូមគោរពអញ្ជើញ",
  ip:"ឯកឧត្តម អ្នកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា និងប្រិយមិត្ត អញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យសិរីសួស្តី ជ័យមង្គល ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍ កូនប្រុស-ស្រី របស់យើងខ្ញុំ",
  gl:"កូនប្រុសនាម",bl:"កូនស្រីនាម",gn:"សុន សោភណ្ឌ៌",bn:"មៀន សុផាលីន",
  idt:"ពិសាភោជនាហារប្រព្រឹត្តទៅ "+W.lunar+" ត្រូវនឹងថ្ងៃ ទី១៥ ខែវិច្ឆិកា ឆ្នាំ២០២៦ វេលាម៉ោង "+W.time.km+" ស្ថិតនៅ"+W.venue.km+" ដោយមេត្រីភាព។"});
-Object.assign(T.en,{g1:W.parents[0],g2:W.parents[1],b1:W.parents[2],b2:W.parents[3],ih:"With great honour, we invite you",
+Object.assign(T.en,{ih:"With great honour, we invite you",
  ip:"Distinguished guests and dear friends, please join us as honoured guests to share in the blessings of our children’s wedding.",
  gl:"The groom",bl:"The bride",gn:"Moeun Sophalin",bn:"Sonr Sophorn",
  idt:"The reception takes place on Sunday, 15 November 2026 at "+W.time.en+", at "+W.venue.en+"."});
-Object.assign(T.km,{ch:"កូនកំលោះ និង កូនក្រមុំ",gl2:"កូនកំលោះ",bl2:"កូនក្រមុំ",gk:"សុន សោភណ្ឌ៌",bk:"មៀន សុផាលីន",ge:W.groom.en,be:W.bride.en,
- gp1:W.parents[0],gp2:"និង "+W.parents[1],bp1:W.parents[2],bp2:"និង "+W.parents[3]});
-Object.assign(T.en,{ch:"The Groom & The Bride",gl2:"The groom",bl2:"The bride",gk:"Sonr Sophorn",bk:"Moeurn Sophalin",ge:W.groom.en,be:W.bride.en,
- gp1:W.parents[0],gp2:"and "+W.parents[1],bp1:W.parents[2],bp2:"and "+W.parents[3]});
+Object.assign(T.km,{ch:"កូនកំលោះ និង កូនក្រមុំ",gl2:"កូនកំលោះ",bl2:"កូនក្រមុំ",gk:"សុន សោភណ្ឌ៌",bk:"មៀន សុផាលីន",ge:W.groom.en,be:W.bride.en});
+Object.assign(T.en,{ch:"The Groom & The Bride",gl2:"The groom",bl2:"The bride",gk:"Sonr Sophorn",bk:"Moeurn Sophalin",ge:W.groom.en,be:W.bride.en});
 Object.assign(T.km,{cdh:"រាប់ថយក្រោយ ឆ្ពោះទៅថ្ងៃមង្គល",u0:"ថ្ងៃ",u1:"ម៉ោង",u2:"នាទី",u3:"វិនាទី",mq:"សិរីសួស្តី ជ័យមង្គល ពរជ័យ សុខសន្តិភាព"});
 Object.assign(T.en,{cdh:"Counting down to our wedding day",u0:"Days",u1:"Hours",u2:"Minutes",u3:"Seconds",mq:"សិរីសួស្តី ជ័យមង្គល ពរជ័យ សុខសន្តិភាព"});
 Object.assign(T.km,{pgh:"កម្មវិធីសិរីមង្គលអាពាហ៍ពិពាហ៍"});Object.assign(T.en,{pgh:"Wedding Programme"});
 /* programme read from your screenshot: VERIFY every line. r = [time, ritual, icon] */
 W.prog=[
  {d:"កម្មវិធីទី១ ថ្ងៃសៅរ៍ ទី22 ខែវិច្ឆិកា ឆ្នាំ២០២៦",r:[
-  ["ម៉ោង ០៣:០០ រសៀល","ពិធីសែនក្រុងពាលី","flame"],
-  ["ម៉ោង ០៤:០០ រសៀល","ពិធីសូត្រមន្តចម្រើនព្រះបរិត្ត","lotus"],
-  ["ម៉ោង ០៥:០០ ល្ងាច","ពិធីជុំពេលា និងដាវខាន់ស្លា","knot"],
-  ["ម៉ោង ០៦:៣០ ល្ងាច","អញ្ជើញភ្ញៀវកិត្តិយសពិសាអាហារពេលល្ងាច","bowl"]]},
+  ["ម៉ោង ០៣:០០ រសៀល","ពិធីសែនក្រុងពាលី","flame","Traditional blessing ceremony"],
+  ["ម៉ោង ០៤:០០ រសៀល","ពិធីសូត្រមន្តចម្រើនព្រះបរិត្ត","lotus","Monks' blessing"],
+  ["ម៉ោង ០៥:០០ ល្ងាច","ពិធីជុំពេលា និងដាវខាន់ស្លា","knot","Wedding ritual and ceremonial offerings"],
+  ["ម៉ោង ០៦:៣០ ល្ងាច","អញ្ជើញភ្ញៀវកិត្តិយសពិសាអាហារពេលល្ងាច","bowl","Dinner reception"]]},
  {d:"កម្មវិធីទី២ ថ្ងៃអាទិត្យ ទី១៥ ខែវិច្ឆិកា ឆ្នាំ២០២៦",r:[
-  ["ម៉ោង ០៦:៣០ ព្រឹក","ជួបជុំភ្ញៀវកិត្តិយសដើម្បីរៀបចំហែជំនូន","sun"],
-  ["ម៉ោង ០៧:០០ ព្រឹក","ពិធីហែជំនូនកំណត់ចូលរោងជ័យ","gift"],
-  ["ម៉ោង ០៧:៣០ ព្រឹក","ពិធីថៅមហានិយាយជើងការ សែនព្រេន រៀបរាប់ផ្លែឈើនិងពិសាភោជនាហារពេលព្រឹក","bowl"],
-  ["ម៉ោង ០៨:០០ ព្រឹក","ពិធីបំពាក់ចិញ្ចៀន","ring"],
-  ["ម៉ោង ០៩:០០ ព្រឹក","ពិធីកាត់សក់បង្កក់សិរី កូនប្រុស-កូនស្រី","scissors"],
-  ["ម៉ោង ១១:០០ ព្រឹក","ពិធីសំពះផ្ទឹមចងដៃ បង្វិលពពិល និងព្រះថោងតោងស្បៃ","knot"],
-  ["ម៉ោង ១២:០០ ថ្ងៃត្រង់","អញ្ជើញភ្ញៀវកិត្តិយសពិសាអាហារថ្ងៃត្រង់ បញ្ចប់កិច្ចអាពាហ៍ពិពាហ៍","bowl"],
-  ["ម៉ោង ០៤:០០ ល្ងាច","អញ្ជើញភ្ញៀវកិត្តិយសពិសាភោជនាហារ នៅគេហដ្ឋានខាងស្រី ដោយមេត្រីភាព ។ សូមអរគុណ !","bowl"]]}];
+  ["ម៉ោង ០៦:៣០ ព្រឹក","ជួបជុំភ្ញៀវកិត្តិយសដើម្បីរៀបចំហែជំនូន","sun","Guests gather for the gift procession"],
+  ["ម៉ោង ០៧:០០ ព្រឹក","ពិធីហែជំនូនកំណត់ចូលរោងជ័យ","gift","Gift procession into the wedding hall"],
+  ["ម៉ោង ០៧:៣០ ព្រឹក","ពិធីថៅមហានិយាយជើងការ សែនព្រេន រៀបរាប់ផ្លែឈើនិងពិសាភោជនាហារពេលព្រឹក","bowl","Matchmaker ceremony, offerings and breakfast"],
+  ["ម៉ោង ០៨:០០ ព្រឹក","ពិធីបំពាក់ចិញ្ចៀន","ring","Ring ceremony"],
+  ["ម៉ោង ០៩:០០ ព្រឹក","ពិធីកាត់សក់បង្កក់សិរី កូនប្រុស-កូនស្រី","scissors","Hair-cutting ceremony for the couple"],
+  ["ម៉ោង ១១:០០ ព្រឹក","ពិធីសំពះផ្ទឹមចងដៃ បង្វិលពពិល និងព្រះថោងតោងស្បៃ","knot","Sampeah Phtem, hand-tying and wedding rituals"],
+  ["ម៉ោង ១២:០០ ថ្ងៃត្រង់","អញ្ជើញភ្ញៀវកិត្តិយសពិសាអាហារថ្ងៃត្រង់ បញ្ចប់កិច្ចអាពាហ៍ពិពាហ៍","bowl","Lunch for guests"],
+  ["ម៉ោង ០៤:០០ ល្ងាច","អញ្ជើញភ្ញៀវកិត្តិយសពិសាភោជនាហារ នៅគេហដ្ឋានខាងស្រី ដោយមេត្រីភាព ។ សូមអរគុណ !","bowl","Dinner reception at the bride's family home"]]}];
 Object.assign(T.km,{mmk:"Photo Memory",mm1:"ពីពេលព្រឹក ដល់ពេលល្ងាច",mmh:"ដំណើររឿងនៃស្នេហ៍",mms:"រំកិលដើម្បីទស្សនា"});
 Object.assign(T.en,{mmk:"Photo Memory",mm1:"From morning to evening",mmh:"Our love story",mms:"Scroll to explore"});
 /* 10 slots. Add s:"assets/xx.jpg" and c:"caption" per photo; empty slots show a placeholder */
 W.mem=[{s:"assets/couple1.jpg",c:"ប្រាសាទអង្គរវត្ត"},{s:"assets/couple1.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"}];
-let lang="km",audio=null,idle;
+let lang="km",idle,personalizedGuestName="";
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 
 /* name logo (HTML text over SVG; Khmer is never inside SVG) */
@@ -80,11 +76,20 @@ function setLang(l){lang=l;document.documentElement.lang=l;
   W.date.forEach((v,i)=>$("#d"+i).textContent=v);
   $("#en").textContent=W.groom.en+" & "+W.bride.en;
   $("#lu").textContent=(l=="km"?"":"Lunar date: ")+W.lunar;
-  $("#vn").textContent=W.venue[l];$("#lang").innerHTML=l=="km"?"<b>ខ្មែរ</b> / EN":"ខ្មែរ / <b>EN</b>";}
+  $("#vn").textContent=W.venue[l];$("#lang").innerHTML=l=="km"?"<b>ខ្មែរ</b> / EN":"ខ្មែរ / <b>EN</b>";
+  const galleryAll=$("#gallery-all");
+  if(galleryAll)galleryAll.textContent=(l=="km"?"មើលរូបភាពទាំងអស់":"View all photos")+` (${W.gal?.length||0})`;
+  if(personalizedGuestName)$("#guest-greeting").textContent=l=="km"?`សូមគោរពអញ្ជើញ ${personalizedGuestName}`:`You are warmly invited, ${personalizedGuestName}`;}
 setLang("km");
 $("#lang").onclick=()=>setLang(lang=="km"?"en":"km");
-$("#mu").onclick=()=>{if(!audio)return;audio.paused?audio.play():audio.pause()};
-if(W.music){audio=new Audio(W.music);audio.loop=true}
+const musicButton=$("#mu"),musicPanel=$("#music-panel"),musicFrame=$("#music-frame");
+musicButton.onclick=()=>{
+  const opening=musicPanel.hidden;
+  musicPanel.hidden=!opening;
+  musicButton.setAttribute("aria-expanded",String(opening));
+  musicButton.setAttribute("aria-label",opening?"Close music player":"Open music player");
+  musicFrame.src=opening?"https://www.youtube-nocookie.com/embed/7txNLY2XLAs?autoplay=1&playsinline=1&rel=0":"about:blank";
+};
 
 /* idle float + tilt */
 function startIdle(){idle=gsap.to("#wrap",{y:-7,duration:2.4,repeat:-1,yoyo:true,ease:"sine.inOut"});}
@@ -136,12 +141,10 @@ function startEmbers(){
       x.fillStyle=g;x.beginPath();x.arc(px,py,q.r*5,0,7);x.fill();}
   })(0);
 }
-
 /* opening sequence (~5.5 s) */
 let opened=false;
 function open(){
   if(opened)return;opened=true;idle.kill();
-  if(audio)audio.play().catch(()=>{});
   if(matchMedia("(prefers-reduced-motion:reduce)").matches){gsap.set("#env",{display:"none"});coverIn();return;}
   const flap=$("#flap"),f={a:0},parts=".back,.pocket,.flap,.fsh,.seal";
   gsap.to("#wrap",{rotationX:0,rotationY:0,y:0,duration:.6});
@@ -168,7 +171,7 @@ function open(){
 }
 $("#seal").onclick=open;$("#wrap").addEventListener("click",open);
 /* replay without reloading, so a chosen photo is kept */
-function replay(){gsap.killTweensOf("*");gsap.set("#env",{display:"flex"});gsap.set("#cover,#scroll",{visibility:"hidden"});$("#scroll").scrollTop=0;
+function replay(){gsap.killTweensOf("*");musicFrame.src="about:blank";musicPanel.hidden=true;musicButton.setAttribute("aria-expanded","false");musicButton.setAttribute("aria-label","Open music player");gsap.set("#env",{display:"flex"});gsap.set("#cover,#scroll",{visibility:"hidden"});$("#scroll").scrollTop=0;
   gsap.set("#wrap,.back,.pocket,.flap,.fsh,.seal,.card,.hint",{clearProps:"all"});
   const f=$("#flap");f.style.transform="";f.style.zIndex="";$("#bar").style.display="none";opened=false;startIdle();}
 $("#rp").onclick=replay;
@@ -204,7 +207,7 @@ const ICON={flame:"M16 4C20 9 22 12 22 16C22 20 19 23 16 23C13 23 10 20 10 16C10
  ring:"M16 12A8 8 0 1 1 16 28A8 8 0 1 1 16 12Z M12 9L16 4L20 9L16 12Z",
  scissors:"M7 6A3.5 3.5 0 1 1 7 13A3.5 3.5 0 1 1 7 6Z M7 19A3.5 3.5 0 1 1 7 26A3.5 3.5 0 1 1 7 19Z M10 12L27 24 M10 20L27 8"};
 (function(){const tl=$(".tl"),still=matchMedia("(prefers-reduced-motion:reduce)").matches;
- tl.insertAdjacentHTML("beforeend",W.prog.map((d,i)=>`<div class="dh${i?"":" f"}">${d.d}</div>`+d.r.map(r=>`<div class="it"><div class="ic"><svg viewBox="0 0 32 32">${ICON[r[2]].split(" M").map((s,j)=>`<path d="${j?"M":""}${s}"/>`).join("")}</svg></div><b>${r[0]}</b><span>${r[1]}</span></div>`).join("")).join(""));
+ tl.insertAdjacentHTML("beforeend",W.prog.map((d,i)=>`<div class="dh${i?"":" f"}">${d.d}</div>`+d.r.map(r=>`<div class="it"><div class="ic"><svg viewBox="0 0 32 32">${ICON[r[2]].split(" M").map((s,j)=>`<path d="${j?"M":""}${s}"/>`).join("")}</svg></div><b>${r[0]}</b><span>${r[1]}${r[3]?`<em>${r[3]}</em>`:""}</span></div>`).join("")).join(""));
  $$(".tl .ic path").forEach(p=>{const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L});
  const lit=e=>{e.classList.add("on");e.querySelectorAll("path").forEach(p=>p.style.strokeDashoffset=0)};
  function prog(){const sc=$("#scroll").getBoundingClientRect(),line=sc.top+sc.height*.6,r=tl.getBoundingClientRect();
@@ -253,7 +256,6 @@ function scallop(W,H,nx,ny,e=1.8){const a=W/nx,b=H/ny;let d="M0 0";
    .fromTo(".gm .nmk",{clipPath:"inset(-40% 110% -40% -10%)"},{clipPath:IN,duration:1.3,ease:"power3.out"},1.5)
    .fromTo(".br .nmk",{clipPath:"inset(-40% -10% -40% 110%)"},{clipPath:IN,duration:1.3,ease:"power3.out"},1.7)
    .fromTo(".nme",{clipPath:"inset(-30% 100% -30% -10%)"},{clipPath:"inset(-30% -10% -30% -10%)",duration:1.6,ease:"power2.inOut",stagger:.25},2.1)
-   .from(".pp",{opacity:0,duration:1,stagger:.2},2.7)
    .add(()=>document.querySelectorAll("#cp *").forEach(x=>{if(x.style.clipPath)x.style.clipPath="none"}));
  },{root:$("#scroll"),threshold:.2}).observe($("#cp"));})();
 /* invitation section: one signature moment (arch wipes up, outline draws, medallion unfolds) */
@@ -262,8 +264,6 @@ function scallop(W,H,nx,ny,e=1.8){const a=W/nx,b=H/ny;let d="M0 0";
   .fromTo(".ar",{clipPath:"inset(100% 0 0 0)"},{clipPath:"inset(0% 0 0 0)",duration:1.8,ease:"power3.inOut"})
   .fromTo(".ar img",{scale:1.25},{scale:1,duration:2.4,ease:"power2.out"},0)
   .fromTo(".aro",{clipPath:"inset(100% 0 0 0)"},{clipPath:"inset(0% 0 0 0)",duration:2,ease:"power2.inOut"},.2)
-  .from(".par .l",{x:-30,opacity:0,duration:1,ease:"power3.out"},.6)
-  .from(".par .r",{x:30,opacity:0,duration:1,ease:"power3.out"},.6)
   .fromTo(".ih",{clipPath:"inset(-40% 110% -40% -10%)"},{clipPath:"inset(-40% -10% -40% -10%)",duration:1.3,ease:"power3.out",onComplete:()=>$(".ih").style.clipPath="none"},.9)
   .from(".ip",{opacity:0,duration:1.2},1.3)
   .from(".md",{rotation:-120,scale:.2,opacity:0,duration:1.4,ease:"back.out(1.4)"},1.6)
@@ -275,3 +275,192 @@ const pf=document.createElement("input");pf.type="file";pf.accept="image/*";
 $("#pk").onclick=()=>pf.click();
 pf.onchange=()=>{const f=pf.files[0];if(!f)return;const u=URL.createObjectURL(f);
   document.documentElement.style.setProperty("--photo",`url("${u}") center/cover no-repeat`);$("#pk").textContent="Photo applied ✓";};
+  /* In javascript.js: paste this at the VERY END of the file. */
+
+/* ---- Name fix (assumes the Khmer invitation text is right: groom = សុន សោភណ្ឌ៌) ----
+   Also swap the W.groom / W.bride objects at the top of the file (see notes). */
+Object.assign(T.km,{gn:W.groom.km,bn:W.bride.km,gk:W.groom.km,bk:W.bride.km,ge:W.groom.en,be:W.bride.en});
+Object.assign(T.en,{gn:W.groom.en,bn:W.bride.en,gk:W.groom.en,bk:W.bride.en,ge:W.groom.en,be:W.bride.en});
+
+/* ---- Texts ---- */
+Object.assign(T.km,{qh:"ចំណងដៃ",qs:"វត្តមានរបស់ប្រិយមិត្តជាកិត្តិយសដ៏ធំបំផុតសម្រាប់យើងខ្ញុំ។ ប្រសិនបើមានបំណងផ្តល់ចំណងដៃ សូមស្កេន QR ខាងក្រោម។",qsave:"រក្សាទុករូប QR",
+ lh:"ទីតាំងកម្មវិធី",lv:W.venue.km,lb:"ទីតាំង",gh:"រូបភាពអនុស្សាវរីយ៍",mapLink:"ចុចមើលទីតាំងក្នុង Google Maps",
+ contactIntro:"សូមទាក់ទងមកយើងខ្ញុំ ឬចែករំលែកលិខិតអញ្ជើញជាមួយក្រុមគ្រួសារ និងមិត្តភក្តិ។",
+ contactUs:"ទាក់ទងតាម",shareLabel:"ចែករំលែក",invitationLink:"ចម្លងតំណលិខិតអញ្ជើញ",
+ rsvpTitle:"សូមបញ្ជាក់ការអញ្ជើញ",rsvpIntro:"សូមបញ្ជាក់ការចូលរួមរបស់អ្នក។",rsvpFor:"លិខិតអញ្ជើញសម្រាប់",
+ rsvpAttendLabel:"តើលោកអ្នកអាចចូលរួមបានទេ?",rsvpYes:"ចូលរួម",rsvpNo:"មិនអាចចូលរួម",
+ rsvpCountLabel:"ចំនួនអ្នកមក",rsvpPhoneLabel:"លេខទូរស័ព្ទ (ជាជម្រើស)",rsvpMessageLabel:"សារជូនពរ (ជាជម្រើស)",
+ rsvpSubmit:"បញ្ជូនចម្លើយ"});
+Object.assign(T.en,{qh:"Wedding Gift",qs:"Your presence is our greatest gift. Should you wish to give, you may scan a code below.",qsave:"Save QR",
+ lh:"Location",lv:W.venue.en,lb:"Location",gh:"Our Moments",mapLink:"Open location in Google Maps",
+ contactIntro:"Contact us or share this invitation with your family and friends.",
+ contactUs:"Contact via",shareLabel:"Share",invitationLink:"Copy invitation link",
+ rsvpTitle:"Please RSVP",rsvpIntro:"Please let us know if you can join us.",rsvpFor:"Invitation for",
+ rsvpAttendLabel:"Will you attend?",rsvpYes:"Yes, I will attend",rsvpNo:"Sorry, I cannot attend",
+ rsvpCountLabel:"Number of guests",rsvpPhoneLabel:"Phone number (optional)",rsvpMessageLabel:"Message (optional)",
+ rsvpSubmit:"Send RSVP"});
+
+/* ---- EDIT ME: QR images, map links, phones, 6 gallery photos ---- */
+W.qr=[
+ {k:"KHQR",s:"assets/khqr.png",n:W.bride.km},
+ {k:"ABA PAY",s:"assets/abc.png",n:W.bride.km}
+];
+W.map={
+ embed:"https://maps.google.com/maps?q=10.7266983,104.5905415&z=17&output=embed",
+ link:"https://maps.app.goo.gl/HH5bvU1fffxZ43RG6",
+ phones:["096 7 717 278","070 895 623"]    /* verify every digit */
+};
+W.gal=[
+ "assets/pic2.png","assets/pic3.png","assets/pic4.png","assets/couple1.png","assets/couple.jpg",
+ "assets/gallergy1.png","assets/gallergy2.png","assets/gallergy3.png","assets/gallergy4.png","assets/gallergy5.png"
+];
+
+/* ---- Contact and invitation sharing ---- */
+(function(){
+ const phone="016636211";
+ const facebookUrl="https://www.facebook.com/share/1FpQwy7K8o/?mibextid=wwXIfr";
+ $("#contact-phone").href=`tel:${phone}`;
+ $("#contact-phone").textContent=phone;
+ $("#telegram-link").href="https://t.me/+85516636211";
+ $("#messenger-link").href=facebookUrl;
+ $("#facebook-link").href=facebookUrl;
+ $("#copy-invitation").addEventListener("click",async()=>{
+  const status=$("#contact-status");
+  try{
+   await navigator.clipboard.writeText(window.location.href);
+   status.textContent=lang==="km"?"បានចម្លងតំណលិខិតអញ្ជើញហើយ":"Invitation link copied.";
+  }catch(error){
+   const copied=window.prompt(lang==="km"?"សូមចម្លងតំណលិខិតអញ្ជើញ":"Copy the invitation link",window.location.href);
+   status.textContent=copied===null?(lang==="km"?"មិនបានចម្លងតំណទេ":"Link was not copied."):(lang==="km"?"សូមចែករំលែកតំណនេះ":"Share this link");
+  }
+ });
+})();
+
+/* ---- QR cards ---- */
+(function(){
+ $("#qg").innerHTML=W.qr.map(q=>`<div class="qc"><div class="qk">${q.k}</div>
+  <div class="qi"><img src="${q.s}" alt="${q.k} QR" onerror="this.parentNode.classList.add('e');this.replaceWith(document.createTextNode('${q.k} QR'))"></div>
+  <div class="qn">${q.n}</div>
+  <a class="qb" href="${q.s}" download="${q.k.replace(/\s/g,"-")}-QR" data-i="qsave"></a></div>`).join("");
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{root:$("#scroll"),rootMargin:"0px 0px -8% 0px",threshold:.05});
+ $$("#qg .qc").forEach((c,i)=>{c.style.transitionDelay=i*.2+"s";io.observe(c)});
+})();
+
+/* ---- Map, phones, fixed Location button ---- */
+(function(){
+ const ok=u=>/^https:\/\//.test(u);
+ if(ok(W.map.embed))$("#lm").src=W.map.embed;else $(".lmap").style.display="none";
+ if(ok(W.map.link))$("#map-link").href=W.map.link;else $("#map-link").hidden=true;
+ $("#lph").innerHTML=W.map.phones.map(p=>`<a href="tel:${p.replace(/\s/g,"")}">&#9742; ${p}</a>`).join("");
+ const b=$("#lbtn");
+ b.onclick=()=>$("#loc").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"});
+ new MutationObserver(()=>{
+  const visible=$("#bar").style.display=="flex";
+  b.style.display=visible?"block":"none";
+  $("#bottom-nav").classList.toggle("visible",visible);
+ }).observe($("#bar"),{attributes:true,attributeFilter:["style"]});
+})();
+
+/* ---- Fixed section navigation ---- */
+(function(){
+ const nav=$("#bottom-nav"),links=[...nav.querySelectorAll("[data-target]")];
+ links.forEach(link=>link.addEventListener("click",event=>{
+  event.preventDefault();
+  $(link.dataset.target).scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"start"});
+ }));
+ const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   links.forEach(link=>link.classList.toggle("active",link.dataset.target===`#${entry.target.id}`));
+  }
+ }),{root:$("#scroll"),threshold:.25});
+ links.forEach(link=>io.observe($(link.dataset.target)));
+})();
+
+/* ---- Wedding photo gallery ---- */
+(function(){
+ $("#gt").innerHTML=W.gal.map((s,i)=>`<figure class="gi"><img src="${s}" alt="Wedding photo ${i+1}" loading="lazy" decoding="async"></figure>`).join("");
+ $$("#gt .gi img").forEach(image=>{
+  const setOrientation=()=>{
+   if(!image.naturalWidth||!image.naturalHeight)return;
+   image.closest(".gi").classList.add(image.naturalWidth>image.naturalHeight?"landscape":"portrait");
+  };
+  image.addEventListener("load",setOrientation,{once:true});
+  if(image.complete)setOrientation();
+ });
+ const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(entry.isIntersecting){entry.target.classList.add("in");io.unobserve(entry.target)}
+ }),{root:$("#scroll"),rootMargin:"0px 0px -6% 0px",threshold:.08});
+ $$("#gt .gi").forEach((photo,i)=>{photo.style.transitionDelay=`${(i%5)*.1}s`;io.observe(photo)});
+ $("#gallery-all").addEventListener("click",()=>$("#gal").scrollIntoView({
+  behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",
+  block:"start"
+ }));
+})();
+
+/* ---- Personalized invitation and RSVP ---- */
+(function(){
+ const code=new URLSearchParams(location.search).get("guest");
+ if(!code)return;
+ const card=$("#rsvp-card"),form=$("#rsvp-form"),status=$("#rsvp-status"),
+  guest=$("#rsvp-guest"),guestName=$("#rsvp-guest-name"),
+  attending=$("#rsvp-attending"),partyField=$("#rsvp-party-field"),
+  partySize=$("#rsvp-party-size"),submit=form.querySelector("button[type=submit]");
+ const text=(km,en)=>lang==="km"?km:en;
+ card.hidden=false;
+ status.textContent=text("កំពុងផ្ទៀងផ្ទាត់លិខិតអញ្ជើញ...","Checking your invitation...");
+ fetch(`/api/rsvp?code=${encodeURIComponent(code)}`)
+  .then(async response=>{
+   if(response.status===404)throw new Error("invalid-invitation");
+   if(!response.ok)throw new Error("service-unavailable");
+   const data=await response.json();
+   if(typeof data.guestName!=="string"||!data.guestName.trim())throw new Error("invalid-response");
+   personalizedGuestName=data.guestName.trim();
+   $("#guest-greeting").hidden=false;
+   $("#rsvp-guest-name").textContent=personalizedGuestName;
+   guest.hidden=false;
+   setLang(lang);
+   form.hidden=false;
+   status.textContent="";
+  })
+  .catch(error=>{
+   console.error("Could not load personalized invitation:",error);
+   status.textContent=error.message==="invalid-invitation"
+    ?text("រកមិនឃើញលិខិតអញ្ជើញនេះទេ។ សូមពិនិត្យ link របស់អ្នក។","This invitation link is not valid. Please check your link.")
+    :text("មិនអាចភ្ជាប់ប្រព័ន្ធ RSVP បានទេ។ សូមសាកល្បងម្ដងទៀត។","RSVP is temporarily unavailable. Please try again.");
+  });
+ attending.addEventListener("change",()=>{
+  const isAttending=attending.value==="yes";
+  partyField.hidden=!isAttending;
+  partySize.disabled=!isAttending;
+  partySize.required=isAttending;
+  if(!isAttending)partySize.value="0";
+  else if(Number(partySize.value)<1)partySize.value="1";
+ });
+ form.addEventListener("submit",async event=>{
+  event.preventDefault();
+  submit.disabled=true;
+  status.textContent=text("កំពុងរក្សាទុកចម្លើយ...","Saving your RSVP...");
+  const isAttending=attending.value==="yes";
+  try{
+   const response=await fetch("/api/rsvp",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+     code,attending:isAttending,
+     partySize:isAttending?Number(partySize.value):0,
+     phone:$("#rsvp-phone").value.trim(),
+     message:$("#rsvp-message").value.trim()
+    })
+   });
+   if(!response.ok)throw new Error(`RSVP request failed with status ${response.status}`);
+   status.textContent=text("បានរក្សាទុកចម្លើយ RSVP របស់អ្នករួចហើយ។ អរគុណ!","Your RSVP has been saved. Thank you!");
+  }catch(error){
+   console.error("Could not save RSVP:",error);
+   status.textContent=text("រក្សាទុកមិនបានទេ។ សូមពិនិត្យអ៊ីនធឺណិត ហើយសាកល្បងម្ដងទៀត។","Your RSVP could not be saved. Check your connection and try again.");
+  }finally{
+   submit.disabled=false;
+  }
+ });
+})();
+
+setLang(lang); /* fills all new data-i texts */
