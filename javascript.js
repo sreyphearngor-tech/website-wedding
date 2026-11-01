@@ -288,9 +288,7 @@ Object.assign(T.km,{qh:"ចំណងដៃ",qs:"វត្តមានរបស�
  lh:"ទីតាំងកម្មវិធី",lv:W.venue.km,lb:"ទីតាំង",gh:"រូបភាពអនុស្សាវរីយ៍",mapLink:"ចុចមើលទីតាំងក្នុង Google Maps",
  closingTitle:"សូមអរគុណ",
  closingMessage:"សូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅចំពោះការចូលរួម និងពាក្យជូនពរដ៏មានន័យរបស់លោកអ្នក។ វត្តមានរបស់លោកអ្នក គឺជាកិត្តិយស និងជាសេចក្តីរីករាយដ៏ធំធេងសម្រាប់គ្រួសារយើងខ្ញុំ។",
- contactIntro:"សូមទាក់ទងមកយើងខ្ញុំ ឬចែករំលែកលិខិតអញ្ជើញជាមួយក្រុមគ្រួសារ និងមិត្តភក្តិ។",
- publicInvitationLabel:"ចុច link ខាងក្រោម ដើម្បីមើលលិខិតអញ្ជើញ",
- contactUs:"ទាក់ទងតាម",shareLabel:"ចែករំលែក",invitationLink:"ចម្លងតំណលិខិតអញ្ជើញ",
+ contactIntro:"សូមទាក់ទងមកយើងខ្ញុំ ប្រសិនបើលោកអ្នកមានចម្ងល់។",
  rsvpTitle:"សូមបញ្ជាក់ការអញ្ជើញ",rsvpIntro:"សូមបញ្ជាក់ការចូលរួមរបស់អ្នក។",rsvpFor:"លិខិតអញ្ជើញសម្រាប់",
  rsvpAttendLabel:"តើលោកអ្នកអាចចូលរួមបានទេ?",rsvpYes:"ចូលរួម",rsvpNo:"មិនអាចចូលរួម",
  rsvpCountLabel:"ចំនួនអ្នកមក",rsvpPhoneLabel:"លេខទូរស័ព្ទ (ជាជម្រើស)",rsvpMessageLabel:"សារជូនពរ (ជាជម្រើស)",
@@ -299,9 +297,7 @@ Object.assign(T.en,{qh:"Wedding Gift",qs:"Your presence is our greatest gift. Sh
  lh:"Location",lv:W.venue.en,lb:"Location",gh:"Our Moments",mapLink:"Open location in Google Maps",
  closingTitle:"Thank You",
  closingMessage:"With heartfelt gratitude, thank you for joining us and for your kind wishes. Your presence is an honor and a joy to our families.",
- contactIntro:"Contact us or share this invitation with your family and friends.",
- publicInvitationLabel:"Open the invitation using this link",
- contactUs:"Contact via",shareLabel:"Share",invitationLink:"Copy invitation link",
+ contactIntro:"Please contact us if you have any questions.",
  rsvpTitle:"Please RSVP",rsvpIntro:"Please let us know if you can join us.",rsvpFor:"Invitation for",
  rsvpAttendLabel:"Will you attend?",rsvpYes:"Yes, I will attend",rsvpNo:"Sorry, I cannot attend",
  rsvpCountLabel:"Number of guests",rsvpPhoneLabel:"Phone number (optional)",rsvpMessageLabel:"Message (optional)",
@@ -321,32 +317,6 @@ W.gal=[
  "assets/pic2.png","assets/pic3.png","assets/pic4.png","assets/couple1.png","assets/couple.jpg",
  "assets/gallergy1.png","assets/gallergy2.png","assets/gallergy3.png","assets/gallergy4.png","assets/gallergy5.png"
 ];
-
-/* ---- Contact and invitation sharing ---- */
-(function(){
- const phone="016636211";
- const facebookUrl="https://www.facebook.com/share/1FpQwy7K8o/?mibextid=wwXIfr";
- const publicInvitationUrl=new URL("https://website-wedding-liart.vercel.app/");
- $("#contact-phone").href=`tel:${phone}`;
- $("#contact-phone").textContent=phone;
- $("#public-invitation-link").href=publicInvitationUrl.href;
- $("#telegram-link").href="https://t.me/+85516636211";
- $("#messenger-link").href=facebookUrl;
- $("#facebook-link").href=facebookUrl;
- $("#copy-invitation").addEventListener("click",async()=>{
-  const status=$("#contact-status");
-  const shareUrl=new URL(publicInvitationUrl);
-  const guestCode=new URLSearchParams(window.location.search).get("guest");
-  if(guestCode)shareUrl.searchParams.set("guest",guestCode);
-  try{
-   await navigator.clipboard.writeText(shareUrl.href);
-   status.textContent=lang==="km"?"បានចម្លងតំណលិខិតអញ្ជើញហើយ":"Invitation link copied.";
-  }catch(error){
-   const copied=window.prompt(lang==="km"?"សូមចម្លងតំណលិខិតអញ្ជើញ":"Copy the invitation link",shareUrl.href);
-   status.textContent=copied===null?(lang==="km"?"មិនបានចម្លងតំណទេ":"Link was not copied."):(lang==="km"?"សូមចែករំលែកតំណនេះ":"Share this link");
-  }
- });
-})();
 
 /* ---- QR cards ---- */
 (function(){

@@ -150,7 +150,7 @@ svg.defs{position:absolute;width:0;height:0}
 /* PROGRAMME: gold thread + line icons that draw and light up */
 #pg{position:relative;background-color:#2b3017;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cpath d='M0 45L45 0L90 45L45 90Z' fill='none' stroke='%23c9a24a' stroke-opacity='.17'/%3E%3Cpath d='M45 35l2.6 7.4L55 45l-7.4 2.6L45 55l-2.6-7.4L35 45l7.4-2.6z' fill='%23c9a24a' fill-opacity='.2'/%3E%3C/svg%3E"),radial-gradient(90% 60% at 50% 30%,#3f4524,#2b3017 85%);padding:clamp(60px,10svh,100px) 14px clamp(70px,12svh,120px)}
 #qr,#loc,#contact{position:relative;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cpath d='M0 45L45 0L90 45L45 90Z' fill='none' stroke='%23c9a24a' stroke-opacity='.17'/%3E%3Cpath d='M45 35l2.6 7.4L55 45l-7.4 2.6L45 55l-2.6-7.4L35 45l7.4-2.6z' fill='%23c9a24a' fill-opacity='.2'/%3E%3C/svg%3E"),radial-gradient(90% 60% at 50% 30%,#3f4524,#2b3017 85%);padding:clamp(60px,10svh,100px) 14px clamp(70px,12svh,120px)}
-#closing{position:relative;background-color:#2b3017;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cpath d='M0 45L45 0L90 45L45 90Z' fill='none' stroke='%23c9a24a' stroke-opacity='.17'/%3E%3Cpath d='M45 35l2.6 7.4L55 45l-7.4 2.6L45 55l-2.6-7.4L35 45l7.4-2.6z' fill='%23c9a24a' fill-opacity='.2'/%3E%3C/svg%3E"),radial-gradient(90% 60% at 50% 30%,#3f4524,#2b3017 85%);padding:clamp(70px,12svh,120px) 18px}
+#closing{position:relative;background-color:#2b3017;background-image:linear-gradient(135deg,#252a14d9,#252a14b8),url("assets/background.png"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cpath d='M0 45L45 0L90 45L45 90Z' fill='none' stroke='%23c9a24a' stroke-opacity='.17'/%3E%3Cpath d='M45 35l2.6 7.4L55 45l-7.4 2.6L45 55l-2.6-7.4L35 45l7.4-2.6z' fill='%23c9a24a' fill-opacity='.2'/%3E%3C/svg%3E"),radial-gradient(90% 60% at 50% 30%,#3f4524,#2b3017 85%);background-size:cover,cover,90px 90px,cover;background-position:center,center 42%,center,center;background-repeat:no-repeat,no-repeat,repeat,no-repeat;padding:clamp(70px,12svh,120px) 18px}
 #gal{position:relative;background-color:#2b3017;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cpath d='M0 45L45 0L90 45L45 90Z' fill='none' stroke='%23c9a24a' stroke-opacity='.17'/%3E%3Cpath d='M45 35l2.6 7.4L55 45l-7.4 2.6L45 55l-2.6-7.4L35 45l7.4-2.6z' fill='%23c9a24a' fill-opacity='.2'/%3E%3C/svg%3E"),radial-gradient(90% 60% at 50% 30%,#3f4524,#2b3017 85%);padding:clamp(60px,10svh,100px) 14px clamp(70px,12svh,120px)}
 #pg::before,#qr::before,#loc::before,#gal::before,#contact::before,#closing::before{opacity:.2}
 .pg{position:relative;z-index:1;max-width:880px;margin:auto;padding:clamp(12px,3vw,28px) clamp(12px,4vw,40px);background:transparent}
@@ -242,24 +242,7 @@ svg.defs{position:absolute;width:0;height:0}
 .gallery-ornament path:nth-child(4){stroke:#c9a24a;stroke-width:1.2}
 .gallery-ornament circle{fill:#e8cf86;stroke:#c9a24a;stroke-width:1}
 .contact-inner{position:relative;z-index:1;max-width:760px;margin:auto;text-align:center}
-.contact-number{font-family:Moul;font-size:clamp(48px,12vw,112px);font-weight:400;line-height:1.55;overflow-wrap:anywhere}
-.contact-number a{color:inherit;text-decoration:none}
 .contact-copy{margin:clamp(16px,4vw,36px) auto clamp(28px,5vw,48px);max-width:720px;color:#d8d2b4;font-size:clamp(14px,2.4vw,20px);line-height:2}
-.public-invitation{display:grid;gap:8px;max-width:610px;margin:0 auto clamp(24px,5vw,42px);padding:16px;border:1px solid #c9a24a77;border-radius:14px;background:#0003;color:#e8cf86;font-size:14px}
-.public-invitation a{color:var(--cream);font-size:clamp(13px,2.6vw,17px);overflow-wrap:anywhere;text-underline-offset:4px}
-.public-invitation a:hover,.public-invitation a:focus-visible{color:#fff2bd}
-.contact-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:610px;margin:auto}
-.contact-link{display:flex;align-items:center;gap:14px;min-height:78px;padding:12px 18px;border:1px solid #c9a24a55;border-radius:18px;background:#ffffff0b;color:var(--cream);font:inherit;text-decoration:none;text-align:left;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
-.contact-link:hover,.contact-link:focus-visible{background:#ffffff16;border-color:#c9a24a;transform:translateY(-2px)}
-.contact-icon{display:grid;place-items:center;flex:0 0 46px;width:46px;height:46px;border-radius:50%;background:#c9a24a;color:#241e0d;font-size:24px;font-weight:700}
-.telegram .contact-icon{background:#229ed9;color:#fff}
-.messenger .contact-icon{background:linear-gradient(135deg,#087cff,#c435e8);color:#fff}
-.facebook .contact-icon{background:#0866ff;color:#fff;font-family:Arial,sans-serif}
-.contact-link small,.contact-link b{display:block}
-.contact-link small{color:#cfc3a0;font-size:12px}
-.contact-link b{font-size:clamp(15px,2.8vw,20px)}
-.contact-status{min-height:1.6em;margin-top:12px;color:#e8cf86;font-size:14px}
-@media(max-width:480px){.contact-links{grid-template-columns:1fr}.contact-link{min-height:68px}}
 .guest-greeting{font-size:clamp(13px,min(3.6vw,2.4svh),18px);color:#e8cf86}
 .rsvp-card{margin:clamp(28px,6vw,48px) auto;padding:clamp(20px,4vw,32px);max-width:610px;border:1px solid #c9a24a77;border-radius:18px;background:linear-gradient(145deg,#ffffff0b,#00000018);text-align:left}
 .rsvp-card[hidden],.rsvp-form[hidden],.rsvp-guest[hidden],#rsvp-party-field[hidden]{display:none}
