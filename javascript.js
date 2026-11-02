@@ -80,7 +80,10 @@ function setLang(l){lang=l;document.documentElement.lang=l;
    $("#closing-names").textContent=W.groom[l]+" & "+W.bride[l];
    const galleryAll=$("#gallery-all");
   if(galleryAll)galleryAll.textContent=(l=="km"?"មើលរូបភាពទាំងអស់":"View all photos")+` (${W.gal?.length||0})`;
-  if(personalizedGuestName)$("#guest-greeting").textContent=l=="km"?`សូមគោរពអញ្ជើញ ${personalizedGuestName}`:`You are warmly invited, ${personalizedGuestName}`;}
+   const decrease=$("#rsvp-decrease"),increase=$("#rsvp-increase");
+   if(decrease)decrease.setAttribute("aria-label",T[l].rsvpDecrease);
+   if(increase)increase.setAttribute("aria-label",T[l].rsvpIncrease);
+   if(personalizedGuestName)$("#guest-greeting").textContent=l=="km"?`សូមគោរពអញ្ជើញ ${personalizedGuestName}`:`You are warmly invited, ${personalizedGuestName}`;}
 setLang("km");
 $("#lang").onclick=()=>setLang(lang=="km"?"en":"km");
 const musicButton=$("#mu"),musicPanel=$("#music-panel"),musicFrame=$("#music-frame");
@@ -292,6 +295,7 @@ Object.assign(T.km,{qh:"ចំណងដៃ",qs:"វត្តមានរបស�
  rsvpTitle:"សូមបញ្ជាក់ការអញ្ជើញ",rsvpIntro:"សូមបញ្ជាក់ការចូលរួមរបស់អ្នក។",rsvpFor:"លិខិតអញ្ជើញសម្រាប់",
  rsvpAttendLabel:"តើលោកអ្នកអាចចូលរួមបានទេ?",rsvpYes:"ចូលរួម",rsvpNo:"មិនអាចចូលរួម",
  rsvpCountLabel:"ចំនួនអ្នកមក",rsvpPhoneLabel:"លេខទូរស័ព្ទ (ជាជម្រើស)",rsvpMessageLabel:"សារជូនពរ (ជាជម្រើស)",
+ rsvpMore:"ព័ត៌មានបន្ថែម (ជាជម្រើស)",rsvpDecrease:"បន្ថយចំនួនភ្ញៀវ",rsvpIncrease:"បង្កើនចំនួនភ្ញៀវ",
  rsvpSubmit:"បញ្ជូនចម្លើយ"});
 Object.assign(T.en,{qh:"Wedding Gift",qs:"Your presence is our greatest gift. Should you wish to give, you may scan a code below.",qsave:"Save QR",
  lh:"Location",lv:W.venue.en,lb:"Location",gh:"Our Moments",mapLink:"Open location in Google Maps",
@@ -301,6 +305,7 @@ Object.assign(T.en,{qh:"Wedding Gift",qs:"Your presence is our greatest gift. Sh
  rsvpTitle:"Please RSVP",rsvpIntro:"Please let us know if you can join us.",rsvpFor:"Invitation for",
  rsvpAttendLabel:"Will you attend?",rsvpYes:"Yes, I will attend",rsvpNo:"Sorry, I cannot attend",
  rsvpCountLabel:"Number of guests",rsvpPhoneLabel:"Phone number (optional)",rsvpMessageLabel:"Message (optional)",
+ rsvpMore:"Additional details (optional)",rsvpDecrease:"Decrease guest count",rsvpIncrease:"Increase guest count",
  rsvpSubmit:"Send RSVP"});
 
 /* ---- EDIT ME: QR images, map links, phones, 6 gallery photos ---- */
@@ -385,9 +390,34 @@ W.gal=[
  if(!code)return;
  const card=$("#rsvp-card"),form=$("#rsvp-form"),status=$("#rsvp-status"),
   guest=$("#rsvp-guest"),guestName=$("#rsvp-guest-name"),
-  attending=$("#rsvp-attending"),partyField=$("#rsvp-party-field"),
-  partySize=$("#rsvp-party-size"),submit=form.querySelector("button[type=submit]");
+  yesButton=$("#rsvp-yes"),noButton=$("#rsvp-no"),
+  partyField=$("#rsvp-party-field"),partyCount=$("#rsvp-count"),
+  decrease=$("#rsvp-decrease"),increase=$("#rsvp-increase"),
+  submit=form.querySelector("button[type=submit]");
+ let isAttending=true,partySize=1;
  const text=(km,en)=>lang==="km"?km:en;
+ const updatePartyCount=()=>{
+  partyCount.textContent=String(partySize);
+  decrease.disabled=partySize<=1;
+  increase.disabled=partySize>=20;
+ };
+ const setAttending=value=>{
+  isAttending=value;
+  yesButton.classList.toggle("selected",value);
+  noButton.classList.toggle("selected",!value);
+  yesButton.setAttribute("aria-pressed",String(value));
+  noButton.setAttribute("aria-pressed",String(!value));
+  partyField.hidden=!value;
+ };
+ yesButton.addEventListener("click",()=>setAttending(true));
+ noButton.addEventListener("click",()=>setAttending(false));
+ decrease.addEventListener("click",()=>{
+  if(partySize>1){partySize--;updatePartyCount();}
+ });
+ increase.addEventListener("click",()=>{
+  if(partySize<20){partySize++;updatePartyCount();}
+ });
+ updatePartyCount();
  card.hidden=false;
  status.textContent=text("កំពុងផ្ទៀងផ្ទាត់លិខិតអញ្ជើញ...","Checking your invitation...");
  fetch(`/api/rsvp?code=${encodeURIComponent(code)}`)
@@ -410,26 +440,17 @@ W.gal=[
     ?text("រកមិនឃើញលិខិតអញ្ជើញនេះទេ។ សូមពិនិត្យ link របស់អ្នក។","This invitation link is not valid. Please check your link.")
     :text("មិនអាចភ្ជាប់ប្រព័ន្ធ RSVP បានទេ។ សូមសាកល្បងម្ដងទៀត។","RSVP is temporarily unavailable. Please try again.");
   });
- attending.addEventListener("change",()=>{
-  const isAttending=attending.value==="yes";
-  partyField.hidden=!isAttending;
-  partySize.disabled=!isAttending;
-  partySize.required=isAttending;
-  if(!isAttending)partySize.value="0";
-  else if(Number(partySize.value)<1)partySize.value="1";
- });
  form.addEventListener("submit",async event=>{
   event.preventDefault();
   submit.disabled=true;
   status.textContent=text("កំពុងរក្សាទុកចម្លើយ...","Saving your RSVP...");
-  const isAttending=attending.value==="yes";
   try{
    const response=await fetch("/api/rsvp",{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({
      code,attending:isAttending,
-     partySize:isAttending?Number(partySize.value):0,
+     partySize:isAttending?partySize:0,
      phone:$("#rsvp-phone").value.trim(),
      message:$("#rsvp-message").value.trim()
     })

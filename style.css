@@ -244,21 +244,30 @@ svg.defs{position:absolute;width:0;height:0}
 .contact-inner{position:relative;z-index:1;max-width:760px;margin:auto;text-align:center}
 .contact-copy{margin:clamp(16px,4vw,36px) auto clamp(28px,5vw,48px);max-width:720px;color:#d8d2b4;font-size:clamp(14px,2.4vw,20px);line-height:2}
 .guest-greeting{font-size:clamp(13px,min(3.6vw,2.4svh),18px);color:#e8cf86}
-.rsvp-card{margin:clamp(28px,6vw,48px) auto;padding:clamp(20px,4vw,32px);max-width:610px;border:1px solid #c9a24a77;border-radius:18px;background:linear-gradient(145deg,#ffffff0b,#00000018);text-align:left}
+.rsvp-card{margin:clamp(28px,6vw,48px) auto;padding:clamp(22px,5vw,36px);max-width:560px;border:1px solid #ffffffa6;border-radius:24px;background:linear-gradient(145deg,#fff9f3f2,#f4e8e5f2);box-shadow:0 18px 48px #26141d35;color:#583d2b;text-align:left}
 .rsvp-card[hidden],.rsvp-form[hidden],.rsvp-guest[hidden],#rsvp-party-field[hidden]{display:none}
-.rsvp-heading{text-align:center;font-size:clamp(17px,3vw,23px);margin-bottom:8px}
-.rsvp-intro,.rsvp-guest{text-align:center;color:#d8d2b4;font-size:14px;line-height:1.8}
-.rsvp-guest{color:#e8cf86;margin:8px 0}
-.rsvp-guest b{color:#f3ecdb}
-.rsvp-form{display:grid;gap:14px;margin-top:20px}
-.rsvp-field{display:grid;gap:7px;color:#e8cf86;font-size:14px}
-.rsvp-field input,.rsvp-field select,.rsvp-field textarea{width:100%;padding:11px 12px;border:1px solid #c9a24a77;border-radius:9px;background:#17160f;color:var(--cream);font:inherit}
+.rsvp-heading{text-align:center;font-size:clamp(17px,3vw,23px);margin-bottom:8px;color:#80602a}
+.rsvp-intro,.rsvp-guest{text-align:center;color:#755f54;font-size:14px;line-height:1.8}
+.rsvp-guest{color:#805e27;margin:8px 0}
+.rsvp-guest b{color:#593f32}
+.rsvp-form{display:grid;gap:20px;margin-top:24px}
+.rsvp-field{display:grid;gap:9px;color:#765a37;font-size:14px}
+.rsvp-field input,.rsvp-field textarea{width:100%;padding:11px 12px;border:1px solid #c7b9b4;border-radius:10px;background:#fff;color:#3e302b;font:inherit}
 .rsvp-field textarea{resize:vertical;min-height:84px}
-.rsvp-field input:focus,.rsvp-field select:focus,.rsvp-field textarea:focus{outline:2px solid #c9a24a;outline-offset:2px}
-.rsvp-submit{justify-self:center;min-width:170px;padding:11px 24px;border:1px solid #e8cf86;border-radius:999px;background:#c9a24a;color:#241e0d;font:inherit;font-weight:600;cursor:pointer}
-.rsvp-submit:hover,.rsvp-submit:focus-visible{background:#e8cf86}
+.rsvp-field input:focus,.rsvp-field textarea:focus,.rsvp-choice-button:focus-visible,.rsvp-count-button:focus-visible,.rsvp-submit:focus-visible,.rsvp-extra summary:focus-visible{outline:2px solid #a87b38;outline-offset:3px}
+.rsvp-choice{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.rsvp-choice-button{min-height:64px;padding:10px 12px;border:1px solid #c7b9b4;border-radius:16px;background:#fff;color:#765a37;font:inherit;font-size:clamp(14px,3.4vw,18px);cursor:pointer}
+.rsvp-choice-button.selected{border-color:#795361;background:#795361;color:#fff8f1;box-shadow:0 6px 14px #3e253022}
+.rsvp-counter{display:flex;align-items:center;justify-content:center;gap:clamp(24px,8vw,52px)}
+.rsvp-count-button{display:grid;place-items:center;width:58px;height:58px;border:1px solid #c7b9b4;border-radius:50%;background:#fff;color:#805e27;font:inherit;font-size:24px;cursor:pointer}
+.rsvp-count-button:disabled{opacity:.45;cursor:not-allowed}
+.rsvp-count{min-width:28px;color:#765a37;font-family:Moul,sans-serif;font-size:24px;text-align:center}
+.rsvp-extra{display:grid;gap:14px}
+.rsvp-extra summary{color:#765a37;font-size:13px;cursor:pointer}
+.rsvp-submit{justify-self:stretch;min-height:58px;padding:12px 24px;border:0;border-radius:999px;background:#795361;color:#fff8f1;font:inherit;font-size:clamp(16px,3.5vw,20px);font-weight:600;cursor:pointer;box-shadow:0 8px 18px #3e253022}
+.rsvp-submit:hover,.rsvp-submit:focus-visible{background:#684451}
 .rsvp-submit:disabled{opacity:.65;cursor:wait}
-.rsvp-status{min-height:1.7em;margin-top:12px;color:#e8cf86;font-size:14px;text-align:center;line-height:1.7}
+.rsvp-status{min-height:1.7em;margin-top:12px;color:#765a37;font-size:14px;text-align:center;line-height:1.7}
 .gv{position:relative;z-index:1;max-width:760px;margin:0 auto}
 .gt{columns:2;column-gap:clamp(12px,3vw,22px)}
 .gi{break-inside:avoid;margin:0 0 clamp(12px,3vw,22px);padding:5px;background:#f3ecdb;border:1px solid #c9a24a;border-radius:12px;box-shadow:0 14px 34px #0006;opacity:0;transform:translateY(24px) scale(.97);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1);overflow:hidden}

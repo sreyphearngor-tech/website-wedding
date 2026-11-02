@@ -186,25 +186,32 @@
       <p class="rsvp-intro" data-i="rsvpIntro"></p>
       <p class="rsvp-guest" id="rsvp-guest" hidden><span data-i="rsvpFor"></span> <b id="rsvp-guest-name"></b></p>
       <form class="rsvp-form" id="rsvp-form" hidden>
-        <label class="rsvp-field" for="rsvp-attending">
-          <span data-i="rsvpAttendLabel"></span>
-          <select id="rsvp-attending" name="attending" required>
-            <option value="yes" data-i="rsvpYes"></option>
-            <option value="no" data-i="rsvpNo"></option>
-          </select>
-        </label>
-        <label class="rsvp-field" id="rsvp-party-field" for="rsvp-party-size">
-          <span data-i="rsvpCountLabel"></span>
-          <input id="rsvp-party-size" name="partySize" type="number" min="1" max="20" value="1" required>
-        </label>
-        <label class="rsvp-field" for="rsvp-phone">
-          <span data-i="rsvpPhoneLabel"></span>
-          <input id="rsvp-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
-        </label>
-        <label class="rsvp-field" for="rsvp-message">
-          <span data-i="rsvpMessageLabel"></span>
-          <textarea id="rsvp-message" name="message" rows="3" maxlength="500"></textarea>
-        </label>
+        <div class="rsvp-field">
+          <span id="rsvp-attend-label" data-i="rsvpAttendLabel"></span>
+          <div class="rsvp-choice" role="group" aria-labelledby="rsvp-attend-label">
+            <button class="rsvp-choice-button selected" id="rsvp-yes" type="button" aria-pressed="true" data-i="rsvpYes"></button>
+            <button class="rsvp-choice-button" id="rsvp-no" type="button" aria-pressed="false" data-i="rsvpNo"></button>
+          </div>
+        </div>
+        <div class="rsvp-field" id="rsvp-party-field">
+          <span id="rsvp-count-label" data-i="rsvpCountLabel"></span>
+          <div class="rsvp-counter" role="group" aria-labelledby="rsvp-count-label">
+            <button class="rsvp-count-button" id="rsvp-decrease" type="button" aria-label="Decrease guest count"><span aria-hidden="true">−</span></button>
+            <output class="rsvp-count" id="rsvp-count" aria-live="polite" aria-labelledby="rsvp-count-label">1</output>
+            <button class="rsvp-count-button" id="rsvp-increase" type="button" aria-label="Increase guest count"><span aria-hidden="true">+</span></button>
+          </div>
+        </div>
+        <details class="rsvp-extra">
+          <summary data-i="rsvpMore"></summary>
+          <label class="rsvp-field" for="rsvp-phone">
+            <span data-i="rsvpPhoneLabel"></span>
+            <input id="rsvp-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+          </label>
+          <label class="rsvp-field" for="rsvp-message">
+            <span data-i="rsvpMessageLabel"></span>
+            <textarea id="rsvp-message" name="message" rows="3" maxlength="500"></textarea>
+          </label>
+        </details>
         <button class="rsvp-submit" type="submit" data-i="rsvpSubmit"></button>
       </form>
       <p class="rsvp-status" id="rsvp-status" role="status" aria-live="polite"></p>
