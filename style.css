@@ -50,7 +50,13 @@ svg.defs{position:absolute;width:0;height:0}
 /* COVER */
 #scroll{position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;visibility:hidden;z-index:2}
 #cover{position:relative;height:100svh;visibility:hidden;overflow:hidden;background:#0c0b08}
-.ph{position:absolute;inset:0;background:url("assets/background.png") center 42%/cover no-repeat;z-index:0}
+.ph{position:absolute;inset:0;background:#0c0b08 url("assets/background.png") center/auto 100% no-repeat;z-index:0}
+.cover-side{display:none}
+@media (min-aspect-ratio:3/2){
+ .cover-side{position:absolute;top:0;display:block;width:calc((100vw - 66.64svh)/2);height:100%;object-fit:cover;filter:brightness(.62) saturate(.82);z-index:1}
+ .cover-side-left{left:0;object-position:center 70%}
+ .cover-side-right{right:0;object-position:center 70%}
+}
 #em{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
 #cover::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(#08070459 0%,#0807041f 45%,#08070466 100%),radial-gradient(ellipse at center,#0000 55%,#0005 100%)}
 .cn{position:absolute;z-index:3;width:clamp(70px,22vw,150px);height:auto;color:var(--gold)}

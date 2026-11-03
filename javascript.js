@@ -43,8 +43,19 @@ W.prog=[
   ["ម៉ោង ០៤:០០ ល្ងាច","អញ្ជើញភ្ញៀវកិត្តិយសពិសាភោជនាហារ នៅគេហដ្ឋានខាងស្រី ដោយមេត្រីភាព ។ សូមអរគុណ !","bowl","Dinner reception at the bride's family home"]]}];
 Object.assign(T.km,{mmk:"Photo Memory",mm1:"ពីពេលព្រឹក ដល់ពេលល្ងាច",mmh:"ដំណើររឿងនៃស្នេហ៍",mms:"រំកិលដើម្បីទស្សនា"});
 Object.assign(T.en,{mmk:"Photo Memory",mm1:"From morning to evening",mmh:"Our love story",mms:"Scroll to explore"});
-/* 10 slots. Add s:"assets/xx.jpg" and c:"caption" per photo; empty slots show a placeholder */
-W.mem=[{s:"assets/couple1.jpg",c:"ប្រាសាទអង្គរវត្ត"},{s:"assets/couple1.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"},{s:"assets/couple.jpg"}];
+/* Ten different photos for the love-story strip. */
+W.mem=[
+ {s:"assets/gallergy1.png"},
+ {s:"assets/gallergy2.png"},
+ {s:"assets/gallergy3.png"},
+ {s:"assets/gallergy4.png"},
+ {s:"assets/gallergy5.png"},
+ {s:"assets/gallergy6.png"},
+ {s:"assets/gallergy7.png"},
+ {s:"assets/gallergy8.png"},
+ {s:"assets/gallergy9.png"},
+ {s:"assets/gallergy10.png"}
+];
 let lang="km",idle,personalizedGuestName="";
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 
@@ -308,7 +319,7 @@ Object.assign(T.en,{qh:"Wedding Gift",qs:"Your presence is our greatest gift. Sh
  rsvpMore:"Additional details (optional)",rsvpDecrease:"Decrease guest count",rsvpIncrease:"Increase guest count",
  rsvpSubmit:"Send RSVP"});
 
-/* ---- EDIT ME: QR images, map links, phones, 6 gallery photos ---- */
+/* ---- EDIT ME: QR images, map links, phones, gallery photos ---- */
 W.qr=[
  {k:"KHQR",s:"assets/khqr.png",n:W.bride.km},
  {k:"ABA PAY",s:"assets/abc.png",n:W.bride.km}
@@ -319,8 +330,8 @@ W.map={
  phones:["096 7 717 278","070 895 623"]    /* verify every digit */
 };
 W.gal=[
- "assets/pic2.png","assets/pic3.png","assets/pic4.png","assets/couple1.png","assets/couple.jpg",
- "assets/gallergy1.png","assets/gallergy2.png","assets/gallergy3.png","assets/gallergy4.png","assets/gallergy5.png"
+ "assets/gallergy1.png","assets/gallergy2.png","assets/gallergy3.png","assets/gallergy4.png","assets/gallergy5.png",
+ "assets/gallergy6.png","assets/gallergy7.png","assets/gallergy8.png","assets/gallergy9.png","assets/gallergy10.png"
 ];
 
 /* ---- QR cards ---- */
